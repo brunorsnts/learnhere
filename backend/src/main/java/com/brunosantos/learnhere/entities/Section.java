@@ -1,11 +1,7 @@
 package com.brunosantos.learnhere.entities;
 
-import com.brunosantos.learnhere.entities.enums.ResourceType;
 import jakarta.persistence.*;
 import lombok.*;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Getter
 @Setter
@@ -13,8 +9,8 @@ import java.util.List;
 @NoArgsConstructor
 @EqualsAndHashCode(of = "id")
 @Entity
-@Table(name = "tb_resource")
-public class Resource {
+@Table(name = "tb_section")
+public class Section {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,14 +19,12 @@ public class Resource {
     private String description;
     private Integer position;
     private String imgUri;
-    private ResourceType type;
 
     @ManyToOne
-    @JoinColumn(name = "offer_id")
-    private Offer offer;
+    @JoinColumn(name = "prerequisite_id")
+    private Section preRequisite;
 
-    @Setter(AccessLevel.NONE)
-    @OneToMany(mappedBy = "resource")
-    private List<Section> sections = new ArrayList<>();
-
+    @ManyToOne()
+    @JoinColumn(name = "resource_id")
+    private Resource resource;
 }
