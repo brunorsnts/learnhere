@@ -43,3 +43,9 @@ INSERT INTO tb_task (id, description, question_Count, approval_Count, weight, du
 
 INSERT INTO tb_lessons_done (lesson_id, user_id, offer_id) VALUES (1, 1, 1);
 INSERT INTO tb_lessons_done (lesson_id, user_id, offer_id) VALUES (2, 1, 1);
+
+INSERT INTO tb_notification (text, moment, read, route, user_id) VALUES ('Você sabia?', TIMESTAMP WITH TIME ZONE '2026-10-28T03:00:00Z', true, 'user/offer/resorce/lesson', 1);
+INSERT INTO tb_notification (text, moment, read, route, user_id) VALUES ('Feedback', TIMESTAMP WITH TIME ZONE '2026-10-31T03:00:00Z', true, 'user/offer/resorce/lesson', 1);
+INSERT INTO tb_notification (text, moment, read, route, user_id) VALUES ('Novo tópico desbloqueado', TIMESTAMP WITH TIME ZONE '2026-01-28T03:00:00Z', true, 'user/offer/resorce/lesson', 1);
+
+INSERT INTO tb_deliver (uri, moment, status, feedback, correct_Count, user_id, offer_id, lesson_id) VALUES ('https://google.com', TIMESTAMP WITH TIME ZONE '2026-01-28T03:00:00Z', 0, null, null, 1, 1, 4);
