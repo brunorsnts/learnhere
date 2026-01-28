@@ -1,13 +1,12 @@
 package com.brunosantos.learnhere.entities;
 
 import com.brunosantos.learnhere.entities.pk.EnrollmentPK;
-import jakarta.persistence.Column;
-import jakarta.persistence.EmbeddedId;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.Instant;
+import java.util.HashSet;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -30,6 +29,10 @@ public class Enrollment {
 
     private boolean available;
     private boolean onlyUpdate;
+
+    @Setter(AccessLevel.NONE)
+    @ManyToMany(mappedBy = "enrollmentsDone")
+    private Set<Lesson> lessonsDone = new HashSet<>();
 
     public User getStudent() {
         return id.getUser();

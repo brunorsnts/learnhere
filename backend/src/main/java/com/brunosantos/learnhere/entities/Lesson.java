@@ -17,7 +17,7 @@ import java.util.Set;
 public abstract class Lesson {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
     private Integer position;
