@@ -34,4 +34,8 @@ public class Offer {
     @Setter(AccessLevel.NONE)
     @OneToMany(mappedBy = "offer")
     private List<Resource> resources = new ArrayList<>();
+
+    @Setter(AccessLevel.NONE)
+    @OneToMany(mappedBy = "offer")
+    private List<Topic> topics = new ArrayList<>();
 }
