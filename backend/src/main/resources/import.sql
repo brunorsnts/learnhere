@@ -57,5 +57,10 @@ INSERT INTO tb_topic (title, body, moment, author_id, offer_id, lesson_id) VALUE
 INSERT INTO tb_topic (title, body, moment, author_id, offer_id, lesson_id) VALUES ('Título do tópico 5', 'Corpo do tópico 5', TIMESTAMP WITH TIME ZONE '2026-10-28T03:00:00Z', 1, 1, 2);
 INSERT INTO tb_topic (title, body, moment, author_id, offer_id, lesson_id) VALUES ('Título do tópico 6', 'Corpo do tópico 6', TIMESTAMP WITH TIME ZONE '2026-10-28T03:00:00Z', 2, 1, 3);
 
-INSERT INTO tb_topic_likes (topic_id, author_id) VALUES (1, 2);
-INSERT INTO tb_topic_likes (topic_id, author_id) VALUES (2, 1);
+INSERT INTO tb_topic_likes (topic_id, user_id) VALUES (1, 2);
+INSERT INTO tb_topic_likes (topic_id, user_id) VALUES (2, 1);
+
+INSERT INTO tb_reply (body, moment, topic_id, author_id) VALUES ('Tente adicionar a dependência no pom.xml', TIMESTAMP WITH TIME ZONE '2026-01-28T03:00:00Z', 1, 1);
+INSERT INTO tb_reply (body, moment, topic_id, author_id) VALUES ('Muito obrigado funcionou', TIMESTAMP WITH TIME ZONE '2026-01-28T03:00:00Z', 1, 2);
+
+INSERT INTO tb_reply_likes (reply_id, user_id) VALUES (2, 1);
